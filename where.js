@@ -403,7 +403,7 @@ let createMap = (totalBikes) => {
             navigator.geolocation.getCurrentPosition((position) => {
                 let userLat = position.coords.latitude;
                 let userLng = position.coords.longitude;
-                map.setCenter(new kakao.maps.LatLng(userLat, userLng));
+                map.panTo(new kakao.maps.LatLng(userLat, userLng));
             });
         }
     });
