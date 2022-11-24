@@ -1,0 +1,133 @@
+body {
+    padding: 10px;
+}
+.container-fluid {
+    padding-left: 0px;
+    margin: 10px;
+}
+
+/* 내부에 텍스트가 있어도 텍스트 자체가 드래그 되지 않도록 하는 기능 */
+div.stop-dragging {
+    -ms-user-select: none;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/* 5개 미만 */
+div.circle01 {
+    border: 2px solid black;
+    background: #ff0000cc;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    margin: 0 auto;
+    color: white;
+    font-size: 20px;
+    vertical-align: middle;
+    line-height: 45px;
+}
+/* 10개 미만 */
+div.circle02 {
+    border: 2px solid black;
+    background: #ffff00cc;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 20px;
+    vertical-align: middle;
+    line-height: 45px;
+}
+/* 30개 미만 */
+div.circle03 {
+    border: 2px solid black;
+    background: #adff2fcc;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 20px;
+    vertical-align: middle;
+    line-height: 45px;
+}
+/* 30개 이상 */
+div.circle04 {
+    border: 2px solid black;
+    background-color: #86efefcc;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 20px;
+    vertical-align: middle;
+    line-height: 45px;
+}
+
+/* 리스트가 나오는 부분 */
+ul.list-group {
+    border-radius: 10px;
+    background-color: white;
+    border: 1px solid black;
+    margin: 5px;
+    height: 450px;
+    overflow: scroll;
+}
+
+/* 리스트의 항목에 마우스를 놓을 경우 하늘색으로 점점 변하는 기능 */
+li.list-group-item {
+    transition: background 0.5s ease-in-out;
+}
+li.list-group-item:hover {
+    background-color: skyblue;
+}
+
+/* 지도가 나오는 구역 */
+div#map {
+    border-radius: 10px;
+}
+
+/* select 부분, 그리고 버튼부분 */
+div#buttonBox {
+    height: 50px;
+    margin-bottom: 5px;
+}
+select#placeSelected {
+    width: 100%;
+    height: 100%;
+}
+button {
+    width: 100%;
+    height: 100%;
+    font-size: 15px;
+}
+
+/* 텍스트의 탭(tab)을 실제 html 화면에서도 보이게 하는 기능 */
+span.tab {
+    white-space: pre;
+}
+
+/* 로딩중일때 텍스트 부분과 그림부분 */
+div#map-loading {
+    width: 5rem;
+    height: 5rem;
+    margin: 10rem auto;
+}
+div > #map-loading-text {
+    font-size: 20pt;
+    margin-left: 1rem;
+}
+div#location-loading {
+    width: 75px;
+    height: 75px;
+    margin: 175px auto;
+}
+div > #location-loading-text {
+    font-size: 20pt;
+    margin-left: 1rem;
+}

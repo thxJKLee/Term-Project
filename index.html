@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <link rel="shortcut icon" href="icon.png" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="icon.png" />
+        <link rel="icon" href="icon.png" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="style.css" />
+        <title>서울시 따릉이 실시간 위치</title>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 display-4">서울시 따릉이 실시간 위치</div>
+            </div>
+            <div class="row">
+                <div class="col-md-6" id="mapPart">
+                    <div class="row" id="buttonBox">
+                        <div class="col-4">
+                            <select
+                                class="form-select"
+                                name="place"
+                                id="placeSelected"
+                                aria-label="placeSelected"
+                            >
+                                <option value="nn" selected="selected">지역 선택</option>
+                                <option value="gn">강남구</option>
+                                <option value="gd">강동구</option>
+                                <option value="gb">강북구</option>
+                                <option value="gs">강서구</option>
+                                <option value="ga">관악구</option>
+                                <option value="gj">광진구</option>
+                                <option value="gr">구로구</option>
+                                <option value="gc">금천구</option>
+                                <option value="no">노원구</option>
+                                <option value="db">도봉구</option>
+                                <option value="dd">동대문구</option>
+                                <option value="dj">동작구</option>
+                                <option value="mp">마포구</option>
+                                <option value="sd">서대문구</option>
+                                <option value="sb">성북구</option>
+                                <option value="sp">송파구</option>
+                                <option value="yc">양천구</option>
+                                <option value="yd">영등포구</option>
+                                <option value="ys">용산구</option>
+                                <option value="yp">은평구</option>
+                                <option value="jg">중구</option>
+                                <option value="jr">중랑구</option>
+                            </select>
+                        </div>
+                        <div class="col-2">
+                            <button
+                                id="myLocationButton"
+                                type="button"
+                                class="btn btn-primary"
+                                style="padding: 0px"
+                            >
+                                <img src="gps.png" width="20px" alt="내 위치" />
+                            </button>
+                        </div>
+                        <div class="col-2">
+                            <button
+                                id="searchButton"
+                                type="button"
+                                class="btn btn-primary"
+                                style="padding: 0px"
+                            >
+                                검색
+                            </button>
+                        </div>
+                        <div class="col-4">
+                            <button
+                                id="resetButton"
+                                type="button"
+                                class="btn btn-secondary"
+                                style="padding: 0px"
+                            >
+                                초기화면
+                            </button>
+                        </div>
+                    </div>
+                    <div
+                        style="
+                            height: 25rem;
+                            border: 1px solid black;
+                            border-radius: 10px;
+                        "
+                        id="map-div"
+                    >
+                        <div class="d-flex align-items-center" id="map-loading-div">
+                            <strong id="map-loading-text">Loading...</strong>
+                            <div
+                                class="spinner-grow ms-auto"
+                                rol="status"
+                                aria-hidden="true"
+                                id="map-loading"
+                            ></div>
+                        </div>
+                        <div id="map" style="width: 100%; height: 100%"></div>
+                    </div>
+                </div>
+                <div class="col-md-6" class="scroll-list-group">
+                    <ul class="list-group" id="location-list">
+                        <div
+                            class="d-flex align-items-center text-secondary"
+                            id="location-loading-div"
+                        >
+                            <strong id="location-loading-text">Loading...</strong>
+                            <div
+                                class="spinner-border ms-auto"
+                                rol="status"
+                                aria-hidden="true"
+                                id="location-loading"
+                            ></div>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script
+            type="text/javascript"
+            src="//dapi.kakao.com/v2/maps/sdk.js?appkey=55e4b765599b424308fe2a87506d7a85&libraries=clusterer"
+        ></script>
+        <script src="where.js"></script>
+    </body>
+</html>
